@@ -39,8 +39,12 @@ const moveCrate = (line, stacks) => {
     const destination = Number(line.slice(17, 19)) - 1;
     const firstStack = stacks[origin];
     const destStack = stacks[destination];
-    const crates = firstStack.splice(-nbCrates).reverse();
+    // we need to reverse for part 1
+    // const crates = firstStack.splice(-nbCrates).reverse();
+    // and keep the order for part 2
+    const crates = firstStack.splice(-nbCrates);
     stacks[destination] = destStack.concat(crates);
+    console.log('ctacks', stacks)
 }
 
     
