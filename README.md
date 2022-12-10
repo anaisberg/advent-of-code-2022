@@ -9,3 +9,6 @@ daily solutions for the [2022 edition of Advent of Code](https://adventofcode.co
 - ⭑⭑ [day 5](/day-05/day5.js)
 - ✩✩ day 6
 - ⭑⭑ [day 7](/day-07/day7.js)
+- ⭑⭑ [day 8](/day-08/day8.js)
+- ✩✩ day 9
+- ⭑⭑ [day 10](/day-10/day10.js)
