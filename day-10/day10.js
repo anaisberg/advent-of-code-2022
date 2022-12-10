@@ -35,6 +35,31 @@ const solvePart1 = () => {
     });
     const sumSignalStrength = getSignalStrengthSum(register);
     console.log('The sum of the 20th, 60th, 100th, 140th, 180th, and 220th signal strength is', sumSignalStrength);
+    return register;
 }
 
-solvePart1();
+const getCurrentPixel = (register, position) => {
+    const positions = [register - 1, register, register + 1];
+    if (positions.includes(position)) return '#';
+    return '.';
+}
+
+const solvePart2 = () => {
+    const program = lines.map((line) => line.split(' '))
+    const register = solvePart1()
+    const CRT = [];
+    let row = []
+    register.forEach((register, cycle) => {
+        const position = cycle % 40;
+        if (position === 0 && cycle > 0) {
+            CRT.push(row.join(''))
+            row = [];
+        }
+        const pixel = getCurrentPixel(register, position)
+        row.push(pixel)
+    });
+    console.log('CRT:', CRT);
+}
+
+// solvePart1();
+solvePart2();
