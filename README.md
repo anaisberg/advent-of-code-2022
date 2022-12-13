@@ -12,3 +12,6 @@ daily solutions for the [2022 edition of Advent of Code](https://adventofcode.co
 - ⭑⭑ [day 8](/day-08/day8.js)
 - ✩✩ day 9
 - ⭑⭑ [day 10](/day-10/day10.js)
+- ⭑✩ [day 11](/day-11/day11.js)
+- ✩✩ day 12
+- ✩✩ day 13
