@@ -15,7 +15,7 @@ const compareValues = (left, right) => {
     const length = Math.min(left.length, right.length);
     for (let i = 0; i < length; i++) {
         const res = compareValues(left[i], right[i]);
-        if (res !== 0) return res
+        if (res !== 0) return res;
     }
     return right.length - left.length;
 }
@@ -26,7 +26,20 @@ const solvePart1 = (pairs) => {
         const res = compareValues(left, right)
         if (res > 0) indexSum += (index + 1);
     });
-    console.log(indexSum);
+    console.log('Part 1:', indexSum);
 };
 
-solvePart1(pairs)
+const solvePart2 = (pairs) => {
+    pairs.push([[[2]], [[6]]]);
+    const packets = pairs.flat();
+    const sortedPackets = packets
+        .sort((a, b) => - compareValues(a, b))
+        .map(x => x.toString());
+    const firstDivider = sortedPackets.indexOf('2') + 1;
+    const secondDivider = sortedPackets.indexOf('6') + 1;
+    console.log('The decoder key for the distress signal is', firstDivider * secondDivider);
+}
+     
+
+solvePart1(pairs);
+solvePart2(pairs);
